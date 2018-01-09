@@ -4,15 +4,15 @@
 
 # Site
 title: Welcom to Monkey's Home
-subtitle:
-description:
+subtitle: My Own Planet
+description: This is Monkey's blog, you can get know about my readings, sports and technology here
 author: HOU Yuxin
-language:
+language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://houx15.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -55,7 +55,16 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
+  读书笔记: reading
+  光影之间: photograph
+  技术栈: technology
+  心理学: psychology
+  铭记一刻: memory
 tag_map:
+  reading: reading
+  philosophy: philosophy
+  literature: literature
+  psychology: psychology
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -74,9 +83,53 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: huno
 
+# Feed
+feed: 
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy:
+deploy: 
   type: git
   repo: git@github.com:houx15/houx15.github.io.git
   branch: master
+
+# Plugins
+#plugins:
+#  - hexo-qiniu-sync
+
+# Qiniu
+## offline  是否离线，离线可以使用本地地址渲染
+## sync  是否同步
+## bucket  存储空间名称
+## access_key  上传密钥 AK
+## secret_key  上传密钥 SK
+## secret_file  秘钥文件路径，如果上述两个东西配置在文件内
+## dirPrefix  上传的资源子目录前缀，可选
+## urlPrefix 外链前缀
+## up_host  上传服务器路径，见七牛文档
+## local_dir  本地图片目录
+## update_exist  是否更新已经上传过的文件
+## image/js/css
+## image.extend 可以用来生成缩略图等
+
+qiniu:
+  offline: false
+  sunc: true
+  bucket: blog_photos
+  access_key: y2qwn3a2zw7VQ2MhrnqBmfo3Ip_fePtMRhUHK-zD
+  secret_key: 8nUSIy_MIlIgo1ldaqC9fr82O2JKL8abaksJ9wwq
+  urlPrefix: http://p2a99y937.bkt.clouddn.com/static
+  up_host: http://upload.qiniu.com
+  local_dir: static
+  update_exist: true
+  image:
+    folder: images
+  js:
+    folder: js
+  css:
+    folder: css
+
