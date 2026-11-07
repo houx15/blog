@@ -105,9 +105,8 @@ deploy:
 ## offline  是否离线，离线可以使用本地地址渲染
 ## sync  是否同步
 ## bucket  存储空间名称
-## access_key  上传密钥 AK
-## secret_key  上传密钥 SK
-## secret_file  秘钥文件路径，如果上述两个东西配置在文件内
+## Credentials must stay outside this repository. See README.md.
+## secret_file  仓库外的私密 JSON 凭据文件，仅在外部配置中设置
 ## dirPrefix  上传的资源子目录前缀，可选
 ## urlPrefix 外链前缀
 ## up_host  上传服务器路径，见七牛文档
@@ -118,10 +117,11 @@ deploy:
 
 qiniu:
   offline: false
-  sunc: true
+  # Enable uploads only in a private config outside this repository.
+  sync: false
   bucket: blog_photos
-  access_key: y2qwn3a2zw7VQ2MhrnqBmfo3Ip_fePtMRhUHK-zD
-  secret_key: 8nUSIy_MIlIgo1ldaqC9fr82O2JKL8abaksJ9wwq
+  access_key: ""
+  secret_key: ""
   urlPrefix: http://p2a99y937.bkt.clouddn.com/static
   up_host: http://upload.qiniu.com
   local_dir: static

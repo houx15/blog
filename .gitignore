@@ -5,3 +5,15 @@ db.json
 node_modules/
 public/
 .deploy*/
+
+# Local credentials and private configuration must never be committed.
+.env
+.env.*
+!.env.example
+_config.local.*
+_config.private.*
+.qiniu*
+qiniu-secrets.json
+secrets/
+*.pem
+*.key
